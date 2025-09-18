@@ -3,8 +3,10 @@ import React from 'react';
 function App() {
   return (
     <div className="relative z-10 container mx0-auto  px-4 py-8 m-h-screen">
-      <div className='absolute inset-0 bg-cover bg-center bg-no-repeat' style={{backgroundImage: "url('https://www.freepik.com/free-ai-image/beautiful-sea-landscape-with-water-nature_137488573.htm#fromView=keyword&page=3&position=20&uuid=6d2d3286-8d08-47e8-a0a1-593518be110e&query=Anime+weather')"}}>
-      </div>
+      <div
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: "url('/background.jpg')", filter: 'blur(10px)' }}
+      ></div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 ">
           <div className="mb-8">
