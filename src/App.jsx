@@ -4,9 +4,12 @@ function App() {
   return (
     <div className="relative z-10 container mx0-auto  px-4 py-8 m-h-screen">
       <div
-        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/background.jpg')", filter: 'blur(10px)' }}
-      ></div>
+      >
+        <div className='absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-indigo-900/40'></div>
+        <div className='absolute inset-0 bg-black-20'></div>
+      </div>
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 ">
           <div className="mb-8">
