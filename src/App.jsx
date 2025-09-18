@@ -4,7 +4,7 @@ function App() {
   return (
     <div className="relative z-10 container mx0-auto  px-4 py-8 m-h-screen">
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        className="fixed inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/background.jpg')", filter: 'blur(10px)' }}
       >
         <div className='absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-indigo-900/40'></div>
