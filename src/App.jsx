@@ -1,5 +1,4 @@
-import React from 'react';
-
+import SearchBar from './components/SearchBar';
 function App() {
   return (
     <div className="relative z-10 container mx0-auto  px-4 py-8 m-h-screen">
@@ -27,7 +26,8 @@ function App() {
             </p>
           </div>
           <div>
-            <div className='flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-6 mb-12'>
+            <div className='flex flex-col lg:flex-row items-center justify-center space-y-6 lg:space-y-0 lg:space-x-6 mb-12'>
+              <SearchBar />
             </div>
           </div>
         </div>
