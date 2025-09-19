@@ -1,4 +1,7 @@
 import SearchBar from './components/SearchBar';
+import TemperatureToggle from './components/TemperatureToggle';
+
+
 function App() {
   return (
     <div className="relative z-10 container mx0-auto  px-4 py-8 m-h-screen">
@@ -28,6 +31,7 @@ function App() {
           <div>
             <div className='flex flex-col lg:flex-row items-center justify-center space-y-6 lg:space-y-0 lg:space-x-6 mb-12'>
               <SearchBar />
+              <TemperatureToggle />
             </div>
           </div>
         </div>

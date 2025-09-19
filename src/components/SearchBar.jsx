@@ -21,7 +21,7 @@ function SearchBar() {
           </button>
 
           <button
-            className="absolute right-14 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white transition-all
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/40 hover:text-white transition-all
             p-1 rounded-full hover:bg-white/20"
           >
             <MapPin className="w-5 h-5" />
@@ -43,6 +43,8 @@ function SearchBar() {
               City Name
               <span>,City State</span>
               </div>
+              <div className='text-sm text-white/50'>Country</div>
+              <Search className="w-4 h-4 text-white/40 group-hover:text-white/60" />
             </button>
           </div>
         </div>
