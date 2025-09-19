@@ -1,3 +1,4 @@
+import LoadingSpinner from './components/LoadingSpinner';
 import SearchBar from './components/SearchBar';
 import TemperatureToggle from './components/TemperatureToggle';
 
@@ -32,6 +33,15 @@ function App() {
             <div className='flex flex-col lg:flex-row items-center justify-center space-y-6 lg:space-y-0 lg:space-x-6 mb-12'>
               <SearchBar />
               <TemperatureToggle />
+            </div>
+          </div>
+          <div className='space-y-8'>
+            <div className='flex justify-center'>
+              <div className='bg-white/10 backdrop-blur-xl rounded-3xl p-8
+              borde border-white/20'>
+                <LoadingSpinner />
+                <p className='text-white/80 text-center mt-4 font-medium'>Fetching latest weather status.....</p>
+              </div>
             </div>
           </div>
         </div>
