@@ -26,6 +26,10 @@ function App() {
               the day
             </p>
           </div>
+          <div>
+            <div className='flex flex-col lg:flex-row items-center space-y-6 lg:space-y-0 lg:space-x-6 mb-12'>
+            </div>
+          </div>
         </div>
       </div>
       </div>
