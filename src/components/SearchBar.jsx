@@ -32,9 +32,18 @@ function SearchBar() {
           border border-white/20 rounded-2xl shadow-2xl overflow-hidden z-50"
           >
             <div className="p-6 text-center text-white/70">
-            <div className='animate-spin rounded-full h-6 w-6 border-2 border-white/30 border-t-white mx-auto'></div>
-            <p className="mt-4">Search Cities...</p>
+              <div className="animate-spin rounded-full h-6 w-6 border-2 border-white/30 border-t-white mx-auto"></div>
+              <p className="mt-4">Search Cities...</p>
             </div>
+            <button
+              className="w-full px-6 py-4 text-left hover:bg-white/20 transition-all duration-200 flex items-center 
+            justify-between group border-b border-white/10"
+            >
+              <div className='font-medium text-white group-hover:text-white/90'>
+              City Name
+              <span>,City State</span>
+              </div>
+            </button>
           </div>
         </div>
       </form>
