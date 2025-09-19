@@ -10,7 +10,8 @@ function App() {
         <div className='absolute inset-0 bg-gradient-to-br from-blue-900/40 via-purple-900/30 to-indigo-900/40'></div>
         <div className='absolute inset-0 bg-black-20'></div>
       </div>
-      <div className="max-w-7xl mx-auto">
+      <div className="relative z-10 container mx-auto px-4 py-8 m-h-screen">
+        <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12 ">
           <div className="mb-8">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-4 drop-shadow-2xl tracking-tight">
@@ -26,6 +27,7 @@ function App() {
             </p>
           </div>
         </div>
+      </div>
       </div>
     </div>
   );
