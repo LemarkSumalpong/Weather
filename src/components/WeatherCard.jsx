@@ -1,4 +1,4 @@
-import { MapPin } from 'lucide-react';
+import { MapPin, Sunrise, Sunset } from 'lucide-react';
 
 function WeatherCard() {
   return (
@@ -34,8 +34,9 @@ function WeatherCard() {
             <span>Min Temp</span>
           </div>
         </div>
-        <div className="textwhite/90 tansform hover:scale-110 transition-transform duration-300"></div>
+        <div className="text-white/90 tansform hover:scale-110 transition-transform duration-300"></div>
       </div>
+
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
         <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/10 transition-all duration-300 group">
           <div className="flex items-center space-x-3 mb-2">
@@ -48,9 +49,31 @@ function WeatherCard() {
               Stats Label
             </span>
           </div>
-          <div className='text-white font-semibold text-lg pl-11'>
+          <div className="text-white font-semibold text-lg pl-11">
             Stats Value
           </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-2 gap-4">
+        <div className="bg-gradient-to-r from-orange-500/20 to-yellow-500/20 backdrop-blur-sm rounded-2xl p-4 border border-orange-400/20">
+          <div className="flex items-center space-x-3 mb-2">
+            <div className="p-2 bg-orange-400/20 rounded-full">
+              <Sunrise className="w-4 h-4 text-orange-300" />
+            </div>
+            <span className="text-white/80 text-sm font-medium">Sunrise</span>
+          </div>
+          <div className="text-white font-semibold text-lg pl-11"></div>
+        </div>
+
+        <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl p-4 border border-purple-400/20">
+          <div className="flex items-center space-x-3 mb-2">
+            <div className="p-2 bg-purple-400/20 rounded-full">
+              <Sunset className="w-4 h-4 text-purple-300" />
+            </div>
+            <span className="text-white/80 text-sm font-medium">Sunset</span>
+          </div>
+          <div className="text-white font-semibold text-lg pl-11"></div>
         </div>
       </div>
     </div>
