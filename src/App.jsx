@@ -2,6 +2,7 @@ import ErrorMessage from './components/ErrorMessage';
 import LoadingSpinner from './components/LoadingSpinner';
 import SearchBar from './components/SearchBar';
 import TemperatureToggle from './components/TemperatureToggle';
+import WeatherCard from './components/WeatherCard';
 
 
 function App() {
@@ -46,6 +47,11 @@ function App() {
             </div>
             <div className='max-w-2xl mx-auto'>
               <ErrorMessage />
+            </div>
+            <div className='grid grid-cols-1 xl:grid-cols-3 gap-8'>
+              <div className='xl:col-span-2 '>
+                <WeatherCard />
+              </div>
             </div>
           </div>
         </div>
