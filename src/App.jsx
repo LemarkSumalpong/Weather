@@ -24,7 +24,7 @@ function App() {
                 Check
               </span>
             </h1>
-            <p className="text-white/80 text-sm md:text-base mb-8 max-w-2xl mx-auto loading-relaxed">
+            <p className="text-white/80 text-sm md:text-base mb-8 max-w-2xl mx-auto leading-relaxed">
               RainCheck provides real-time weather forecasts with accurate
               updates, helping you stay prepared for any condition throughout
               the day
