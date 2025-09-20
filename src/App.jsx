@@ -1,3 +1,4 @@
+import ErrorMessage from './components/ErrorMessage';
 import LoadingSpinner from './components/LoadingSpinner';
 import SearchBar from './components/SearchBar';
 import TemperatureToggle from './components/TemperatureToggle';
@@ -23,7 +24,7 @@ function App() {
                 Check
               </span>
             </h1>
-            <p className="text-white/80 text-lg md:text-xl mb-8 max-w-2xl mx-auto loading-relaxed">
+            <p className="text-white/80 text-sm md:text-base mb-8 max-w-2xl mx-auto loading-relaxed">
               RainCheck provides real-time weather forecasts with accurate
               updates, helping you stay prepared for any condition throughout
               the day
@@ -38,10 +39,13 @@ function App() {
           <div className='space-y-8'>
             <div className='flex justify-center'>
               <div className='bg-white/10 backdrop-blur-xl rounded-3xl p-8
-              borde border-white/20'>
+              border border-white/20'>
                 <LoadingSpinner />
                 <p className='text-white/80 text-center mt-4 font-medium'>Fetching latest weather status.....</p>
               </div>
+            </div>
+            <div className='max-w-2xl mx-auto'>
+              <ErrorMessage />
             </div>
           </div>
         </div>
