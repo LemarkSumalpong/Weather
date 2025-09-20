@@ -1,4 +1,5 @@
 import ErrorMessage from './components/ErrorMessage';
+import ForeCast from './components/ForeCast';
 import LoadingSpinner from './components/LoadingSpinner';
 import SearchBar from './components/SearchBar';
 import TemperatureToggle from './components/TemperatureToggle';
@@ -37,6 +38,7 @@ function App() {
               <TemperatureToggle />
             </div>
           </div>
+          
           <div className='space-y-8'>
             <div className='flex justify-center'>
               <div className='bg-white/10 backdrop-blur-xl rounded-3xl p-8
@@ -45,12 +47,17 @@ function App() {
                 <p className='text-white/80 text-center mt-4 font-medium'>Fetching latest weather status.....</p>
               </div>
             </div>
+
             <div className='max-w-2xl mx-auto'>
               <ErrorMessage />
             </div>
+
             <div className='grid grid-cols-1 xl:grid-cols-3 gap-8'>
               <div className='xl:col-span-2 '>
                 <WeatherCard />
+              </div>
+              <div className='xl:cols-span-1'>
+                <ForeCast />
               </div>
             </div>
           </div>
