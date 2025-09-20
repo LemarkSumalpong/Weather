@@ -26,16 +26,31 @@ function WeatherCard() {
           <div className="text-7xl font-bold text-white mb-3 tracking-tight">
             Main Temp
           </div>
-          <div className='text-white/90 text-xl capitalize mb-2 font-semibold'>
+          <div className="text-white/90 text-xl capitalize mb-2 font-semibold">
             Weather Description
           </div>
-          <div className='flex items-center space-x-4 text-white/40 text-sm '>
-          <span>Max Temp</span>
-          <span>Min Temp</span>
+          <div className="flex items-center space-x-4 text-white/40 text-sm ">
+            <span>Max Temp</span>
+            <span>Min Temp</span>
           </div>
         </div>
-        <div className='textwhite/90 tansform hover:scale-110 transition-transform duration-300'>
-        
+        <div className="textwhite/90 tansform hover:scale-110 transition-transform duration-300"></div>
+      </div>
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
+        <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/10 transition-all duration-300 group">
+          <div className="flex items-center space-x-3 mb-2">
+            <div
+              className={
+                'p-2 rounded-full bg-white/10 group-hover:bg-white/20 transition-all'
+              }
+            ></div>
+            <span className="text-white/70 text-sm font-medium">
+              Stats Label
+            </span>
+          </div>
+          <div className='text-white font-semibold text-lg pl-11'>
+            Stats Value
+          </div>
         </div>
       </div>
     </div>
