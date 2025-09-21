@@ -6,9 +6,32 @@ function SearchBar({ onSearch, onlocationSearch, loading }) {
   const [suggestion, setSuggestions] = useState([]);
   const [showSuggestion, setShowSuggestions] = useState(false);
   const [searchLoading, setSearchLoading] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if(query.trim()){
+      onSearch(query.trim());
+      setQuery("");
+      setShowSuggestions(false);
+    }
+  };
+
+  const clearSearch = () => {
+    setQuery("");
+    setSuggestions([]);
+    setShowSuggestions(false);
+  };
+
+  const handleSuggestionsClick = (city) => {
+    const cityName = city.name ? `${city.name}, ${city.state}` : city.name
+    onSearch(cityName);
+    setQuery("");
+    setShowSuggestions(false);
+  }
+
   return (
     <div className="relative w-full max-w-2xl">
-      <form className="relative">
+      <form className="relative" onSubmit={handleSubmit}>
         <div className="relative group">
           <Search className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/40 w-5 h-5 group-focus-within:text-white transition-all" />
           <input
