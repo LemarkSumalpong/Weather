@@ -1,5 +1,4 @@
 import { Calendar, Droplets } from 'lucide-react';
-import React from 'react';
 
 function ForeCast() {
   return (
@@ -17,7 +16,7 @@ function ForeCast() {
             transition-all duration-300 group border border-white/10"
         >
           <div className="flex items-center space-x-5 flex-1">
-            <div className="text-white/90 group-hover:text-white transition-all transform group-hover:scale-100 duration"></div>
+            <div className="text-white/90 group-hover:text-white transition-all transform group-hover:scale-110 duration"></div>
             <div className="flex-1">
               <div className="text-white font-semibold text-lg"></div>
               <div className="text-white/70 text-sm capitalize font-medium">
@@ -35,7 +34,7 @@ function ForeCast() {
             <div className='text-white font-bold text-xl'>
                 Temperature
             </div>
-             <div className='text-white font-bold text-sm'>
+             <div className='text-white font-medium text-sm'>
                  Main Temperature
             </div>
           </div>
