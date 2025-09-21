@@ -5,7 +5,7 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
 
  export const getCurrentWeather = async (city) => {
     try {
-        const response = await fetch(`${BASE_URL}/weather=${city}&appid${API_KEY}&
+        const response = await fetch(`${BASE_URL}/weather=${city}&appid=${API_KEY}&
         units=metric`)
 
         if (!response.ok){
@@ -35,4 +35,31 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
     }
  };
 
- 
+  export const getCurrentWeatherByCoords = async (lat, lon) => {
+    try {
+        const response = await fetch(`${BASE_URL}/weather=${lat}&lon=${lon}&appid=${API_KEY}&
+        units=metric`)
+
+        if (!response.ok){
+            if(response.status === 404){
+                throw new Error(`Invalid API key, please check OpenWeatherMap API configuration.`);
+            }
+        }else{
+            throw new Error("Weather seruice is temporary unavailable, please try again.");
+        }
+
+        const data = await response.json();
+
+        if (data.dt){
+            data.dt = Math.floor(Date.now() / 1000);
+        }
+
+        return data;
+
+    } catch(error) {
+        if(error instanceof TypeError && error.message.includes("fetch")){
+            throw new Error("Network error, please check your internet connection");
+        }
+        throw error;
+    }
+ };
