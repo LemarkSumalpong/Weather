@@ -91,14 +91,14 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
 
  export const searchCities = async (query) => {
     try {
-        const response = await fetch(`${GEO_URL}/weather?q=${query}&limit=5&appid=${API_KEY}`);
+        const response = await fetch(`${GEO_URL}/direct?q=${query}&limit=5&appid=${API_KEY}`);
 
           if (!response.ok){
             if(response.status === 404){
                 throw new Error(`Invalid API key, please check OpenWeatherMap API configuration.`);
-            }
-        }else{
+            }else{
             throw new Error("Weather seruice is temporary unavailable, please try again.");
+        }
         }
 
         const data = await response.json();

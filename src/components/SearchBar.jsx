@@ -22,7 +22,7 @@ function SearchBar({ onSearch, onlocationSearch, loading }) {
 
   useEffect(() => {
     const searchTimeout = setTimeout(async () => {
-      if (query.lenght > 2) {
+      if (query.length > 2) {
         setSearchLoading(true);
 
         try {
@@ -32,7 +32,7 @@ function SearchBar({ onSearch, onlocationSearch, loading }) {
         } catch (err) {
           console.error('Search Failed:', err);
         } finally {
-          searchLoading(false);
+          setSearchLoading(false);
         }
       } else {
         setSuggestions([]);
@@ -117,7 +117,7 @@ function SearchBar({ onSearch, onlocationSearch, loading }) {
                   className="w-full px-6 py-4 text-left hover:bg-white/20 transition-all duration-200 flex items-center 
             justify-between group border-b border-white/10"
                   key={`${city.name}-${city.country}-${index}`}
-                  onClick={handleSuggestionsClick(city)}
+                  onClick={ () => handleSuggestionsClick(city)}
                 >
                   <div className="font-medium text-white group-hover:text-white/90">
                     {city.name}
