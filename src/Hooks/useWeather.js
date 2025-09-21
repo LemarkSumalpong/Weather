@@ -1,0 +1,1 @@
+import {getCurrentWeather, getCurrentWeatherByCoords, getCurrentWeatherForecast} from '../services/weatherAPI';
