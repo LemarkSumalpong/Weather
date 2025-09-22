@@ -1,6 +1,10 @@
 import { Calendar, Droplets } from 'lucide-react';
 import * as LucideIcons from 'lucide-react';
-import { formatDate, formatTemperature, getWeatherIcon } from '../utils/weatherUtils';
+import {
+  formatDate,
+  formatTemperature,
+  getWeatherIcon,
+} from '../utils/weatherUtils';
 
 function WeatherForecast({ forecast, unit }) {
   const dailyForecast = forecast.list.reduce((acc, item) => {
@@ -30,7 +34,8 @@ function WeatherForecast({ forecast, unit }) {
           const IconComponent = LucideIcons[iconName] || LucideIcons.Cloud;
 
           return (
-            <div key={item.dt}
+            <div
+              key={item.dt}
               className="flex items-center justify-between p-5 bg-white/5 backdrop-blur-sm rounded-2xl hover:bg-white/10 
             transition-all duration-300 group border border-white/10"
             >
@@ -40,25 +45,27 @@ function WeatherForecast({ forecast, unit }) {
                 </div>
                 <div className="flex-1">
                   <div className="text-white font-semibold text-lg">
-                    {index === 0 ?  "Today" : formatDate(item.dt)  }
+                    {index === 0 ? 'Today' : formatDate(item.dt)}
                   </div>
                   <div className="text-white/70 text-sm capitalize font-medium">
                     {item.weather[0].description}
                   </div>
                 </div>
-              </div>
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-2 text-white/60">
-                  <Droplets className="w-4 h-4 text-blue-300" />
-                  <span className="font-medium text-sm">
-                    {Math.round(item.pop * 100)}%
-                  </span>
-                </div>
-              </div>
-              <div className="text-right">
-                <div className="text-white font-semibold text-sm">{formatTemperature(item.main.temp_max, unit)}°</div>
-                <div className="text-white font-semibold text-sm">
-                 {formatTemperature(item.main.temp_min, unit)}°
+                <div className="flex items-center space-x-6">
+                  <div className="flex items-center space-x-2 text-white/60">
+                    <Droplets className="w-4 h-4 text-blue-300" />
+                    <span className="font-medium text-sm">
+                      {Math.round(item.pop * 100)}%
+                    </span>
+                  </div>
+                  <div className="text-right">
+                    <div className="text-white font-semibold text-sm">
+                      {formatTemperature(item.main.temp_max, unit)}°
+                    </div>
+                    <div className="text-white font-semibold text-sm">
+                      {formatTemperature(item.main.temp_min, unit)}°
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
