@@ -18,6 +18,14 @@ function App() {
     toggleUnit,
   } = useWeather();
 
+  const handleRetry = () => {
+    if(currentWeather){
+      fetchWeatherByCity(currentWeather.name)
+    }else{
+      fetchWeatherByCity("Cagayan de Oro")
+    }
+  };
+
   return (
     <div className="relative z-10 container mx0-auto  px-4 py-8 m-h-screen">
       <div
@@ -55,7 +63,7 @@ function App() {
             </div>
 
             <div className="space-y-8">
-              {/* {loading && (
+              {loading && (
                 <div className="flex justify-center">
                   <div
                     className="bg-white/10 backdrop-blur-xl rounded-3xl p-8
@@ -67,21 +75,21 @@ function App() {
                     </p>
                   </div>
                 </div>
-              )} */}
+              )}
 
               {error && !loading && (
                 <div className="max-w-2xl mx-auto">
-                  {/* <ErrorMessage /> */}
+                  <ErrorMessage message={error} onRetry={handleRetry} />
                 </div>
               )}
 
               {currentWeather && !loading && (
                 <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
                   <div className="xl:col-span-2 ">
-                    {/* <WeatherCard /> */}
+                    <WeatherCard />
                   </div>
                   <div className="xl:cols-span-1">
-                    {/* {forecast && <ForeCast />} */}
+                    {forecast && <ForeCast />}
                   </div>
                 </div>
               )}

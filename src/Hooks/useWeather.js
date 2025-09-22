@@ -66,7 +66,7 @@ export const useWeather = () => {
 
     useEffect(() =>{
         fetchWeatherByCity("Cagayan de Oro");
-    });
+    }, []);
 
     return {
         currentWeather,

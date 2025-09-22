@@ -15,8 +15,9 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
             }else if(response.status === 401){
                 throw new Error(`Invalid API key, please check OpenWeatherMap API configuration.`);
             }
-        }else{
+            else{
             throw new Error("Weather seruice is temporary unavailable, please try again.");
+        }
         }
 
         const data = await response.json();
@@ -43,9 +44,9 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
         if (!response.ok){
             if(response.status === 404){
                 throw new Error(`Invalid API key, please check OpenWeatherMap API configuration.`);
-            }
-        }else{
+            }else{
             throw new Error("Weather seruice is temporary unavailable, please try again.");
+        }
         }
 
         const data = await response.json();
@@ -76,8 +77,9 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
             }else if(response.status === 401){
                 throw new Error(`Invalid API key, please check OpenWeatherMap API configuration.`);
             }
-        }else{
+            else{
             throw new Error("Weather seruice is temporary unavailable, please try again.");
+        }
         }
 
         return  await response.json();
