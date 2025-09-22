@@ -127,7 +127,7 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
     }
 
     const data = await response.json();
-    return data.current; // only return the 'current' object which includes 'uvi'
+    return data.current; 
   } catch (error) {
     if (error instanceof TypeError && error.message.includes("fetch")) {
       throw new Error("Network error, please check your internet connection");

@@ -22,7 +22,7 @@ const weatherStats = [
   {
     icon: Sun,
     label: "UV Index",
-    value: formatUV(weather.uvi, isDay), // show number + category, account for night
+    value: formatUV(weather.uvi, isDay), 
     color: "text-yellow-300",
   },
     {
