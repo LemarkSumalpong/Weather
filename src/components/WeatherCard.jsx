@@ -8,7 +8,7 @@ import {
   Gauge,
   Thermometer,
 } from 'lucide-react';
-import { formatTemperature, getWeatherIcon } from '../utils/weatherUtils';
+import { formatTemperature, formatTime, getWeatherIcon } from '../utils/weatherUtils';
 import * as LucideIcons from 'lucide-react';
 
 function WeatherCard({ weather, unit }) {
@@ -103,7 +103,7 @@ function WeatherCard({ weather, unit }) {
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
         {weatherStats.map((stat, index) => {
           return (
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/10 transition-all duration-300 group">
+            <div key={stat.label} className="bg-white/5 backdrop-blur-sm rounded-2xl p-4 hover:bg-white/10 transition-all duration-300 group">
           <div className="flex items-center space-x-3 mb-2">
             <div
               className={
@@ -132,7 +132,9 @@ function WeatherCard({ weather, unit }) {
             </div>
             <span className="text-white/80 text-sm font-medium">Sunrise</span>
           </div>
-          <div className="text-white font-semibold text-lg pl-11"></div>
+          <div className="text-white font-semibold text-lg pl-11">
+            {formatTime(weather.sys.sunrise)}
+          </div>
         </div>
 
         <div className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 backdrop-blur-sm rounded-2xl p-4 border border-purple-400/20">
@@ -142,7 +144,9 @@ function WeatherCard({ weather, unit }) {
             </div>
             <span className="text-white/80 text-sm font-medium">Sunset</span>
           </div>
-          <div className="text-white font-semibold text-lg pl-11"></div>
+          <div className="text-white font-semibold text-lg pl-11">
+            {formatTime(weather.sys.sunset)}
+          </div>
         </div>
       </div>
     </div>
