@@ -119,11 +119,13 @@ function SearchBar({ onSearch, onlocationSearch, loading }) {
                   key={`${city.name}-${city.country}-${index}`}
                   onClick={ () => handleSuggestionsClick(city)}
                 >
-                  <div className="font-medium text-white group-hover:text-white/90">
+                 <div>
+                   <div className="font-medium text-white group-hover:text-white/90">
                     {city.name}
-                    {city.state && <span>,{city.state}</span>}
+                    {city.state && <span className='text-white/70'>,{city.state}</span>}
                   </div>
                   <div className="text-sm text-white/50">{city.country}</div>
+                 </div>
                   <Search className="w-4 h-4 text-white/40 group-hover:text-white/60" />
                 </button>
               );

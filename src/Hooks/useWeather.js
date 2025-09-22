@@ -61,7 +61,7 @@ export const useWeather = () => {
     };
 
     const toggleUnit = () => {
-        setUnits(units === "C" ? "F" : "C");
+        setUnits(unit === "C" ? "F" : "C");
     }
 
     useEffect(() =>{

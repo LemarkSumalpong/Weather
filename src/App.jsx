@@ -50,7 +50,7 @@ function App() {
                   onlocationSearch={fetchWeatherByLocation}
                   loading={loading}
                 />
-                <TemperatureToggle />
+                <TemperatureToggle unit={unit} onToggle={toggleUnit} />
               </div>
             </div>
 
