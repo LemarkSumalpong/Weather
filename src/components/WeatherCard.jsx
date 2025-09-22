@@ -81,17 +81,18 @@ function WeatherCard({ weather, unit }) {
           </div>
         </div>
       </div>
-      <div className="flex items-center justify-between b-10">
+      <div className="flex items-center justify-between mb-10">
         <div className="flex-1">
           <div className="text-7xl font-bold text-white mb-3 tracking-tight">
-            Main Temp
+            {formatTemperature(weather.main.temp, unit)}°
+            <span className='text-4xl font-normal text-white/70'>{unit}</span>
           </div>
           <div className="text-white/90 text-xl capitalize mb-2 font-semibold">
-            Weather Description
+           {weather.weather[0].description}
           </div>
           <div className="flex items-center space-x-4 text-white/40 text-sm ">
-            <span>Max Temp</span>
-            <span>Min Temp</span>
+            <span>H:{formatTemperature(weather.main.temp_max, unit)}°</span>
+            <span>L:{formatTemperature(weather.main.temp_min, unit)}°</span>
           </div>
         </div>
         <div className="text-white/90 tansform hover:scale-110 transition-transform duration-300"></div>
