@@ -65,7 +65,7 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
 
   export const getCurrentWeatherForecast = async (city) => {
     try {
-        const response = await fetch(`${BASE_URL}/weather?q=${city}&appid=${API_KEY}&units=metric`);
+        const response = await fetch(`${BASE_URL}/forecast?q=${city}&appid=${API_KEY}&units=metric`);
 
         if (!response.ok){
             if(response.status === 404){
@@ -115,5 +115,7 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
         throw error;
     }
  };
+
+ 
 
  

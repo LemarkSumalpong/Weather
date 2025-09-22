@@ -1,5 +1,5 @@
 import ErrorMessage from './components/ErrorMessage';
-import ForeCast from './components/ForeCast';
+import WeatherForecast from './components/WeatherForecast';
 import LoadingSpinner from './components/LoadingSpinner';
 import SearchBar from './components/SearchBar';
 import TemperatureToggle from './components/TemperatureToggle';
@@ -88,7 +88,7 @@ function App() {
                   <WeatherCard weather={currentWeather} unit={unit} />
                 </div>
                 <div className="xl:col-span-1 overflow-y-auto">
-                  {forecast && <ForeCast />}
+                  {forecast && <WeatherForecast forecast= {forecast} unit={unit} />}
                 </div>
               </div>
             )}
