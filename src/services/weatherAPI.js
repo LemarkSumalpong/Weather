@@ -124,9 +124,10 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
 
     if (!response.ok) {
       throw new Error(`Failed to fetch weather with UV: ${response.status}`);
+      const data = await response.json();
+      return data.current;
     }
 
-    return await response.json();
   } catch (error) {
     if (error instanceof TypeError && error.message.includes("fetch")) {
       throw new Error("Network error, please check your internet connection");

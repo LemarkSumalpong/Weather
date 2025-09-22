@@ -9,18 +9,21 @@ import {
   Thermometer,
   Sun
 } from 'lucide-react';
-import { formatTemperature, formatTime, getWeatherIcon, formatUV } from '../utils/weatherUtils';
+import { formatTemperature, formatTime, getWeatherIcon, formatUV, isDaytime } from '../utils/weatherUtils';
 import * as LucideIcons from 'lucide-react';
 
 function WeatherCard({ weather, unit }) {
   const iconName = getWeatherIcon(weather.weather[0]);
   const IconComponent = LucideIcons[iconName] || LucideIcons.Cloud;
-  const isDay = weather.dt >= weather.sys.sunrise && weather.dt <= weather.sys.sunset;
+
+  const currentTime = weather.dt;
+  const day = isDaytime(currentTime, weather.sunrise, weather.sunset);
+  
 
   const weatherStats = [
    { icon: Sun, 
     label: "UV Index",
-    value: formatUV(weather.uvi, isDay), 
+    value: `${weather.uvi} (${formatUV(weather.uvi, day)})`,
     color: "text-yellow-300",
   },
     {
