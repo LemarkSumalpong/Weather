@@ -9,39 +9,44 @@ import {
   Thermometer,
 } from 'lucide-react';
 import { formatTemperature, getWeatherIcon } from '../utils/weatherUtils';
-import * as LucideIcons from "lucide-react";
+import * as LucideIcons from 'lucide-react';
 
 function WeatherCard({ weather, unit }) {
   const iconName = getWeatherIcon(weather.weather[0]);
   const iconComponent = LucideIcons[iconName] || LucideIcons.Cloud;
 
   const weatherStats = [
-     {icon: Eye,
-     label: "Visibility",
-     value: `${(weather.visibility / 1000).toFixed(1)} km`,
-     color: "text-blue-300",
+    {
+      icon: Eye,
+      label: 'Visibility',
+      value: `${(weather.visibility / 1000).toFixed(1)} km`,
+      color: 'text-blue-300',
     },
-     {icon: Wind,
-     label: "Wind Speed",
-     value: `${weather.wind.speed.toFixed(1)} m/s`,
-     color: "text-green-300",
+    {
+      icon: Wind,
+      label: 'Wind Speed',
+      value: `${weather.wind.speed.toFixed(1)} m/s`,
+      color: 'text-green-300',
     },
-     {icon: Droplets,
-     label: "Humidity",
-     value: `${weather.main.humidity}%`,
-     color: "text-cyan-300",
+    {
+      icon: Droplets,
+      label: 'Humidity',
+      value: `${weather.main.humidity}%`,
+      color: 'text-cyan-300',
     },
-     {icon: Gauge,
-     label: "Pressure",
-     value: `${weather.main.pressure} hPa`,
-     color: "text-purple-300",
+    {
+      icon: Gauge,
+      label: 'Pressure',
+      value: `${weather.main.pressure} hPa`,
+      color: 'text-purple-300',
     },
-     {icon: Thermometer,
-     label: "Feels Like",
-     value: `${formatTemperature(weather.main.feels_like, unit)}°${unit}`,
-     color: "text-orange-300",
+    {
+      icon: Thermometer,
+      label: 'Feels Like',
+      value: `${formatTemperature(weather.main.feels_like, unit)}°${unit}`,
+      color: 'text-orange-300',
     },
-  ]
+  ];
 
   return (
     <div
@@ -54,13 +59,26 @@ function WeatherCard({ weather, unit }) {
             <MapPin className="w-5 h-5 text-white/80 " />
           </div>
           <div>
-            <h2 className="text-white font-semibold text-lg">Weather Name</h2>
-            <p className="text-white/60 text-sm">Weather City</p>
+            <h2 className="text-white font-semibold text-lg">{weather.name}</h2>
+            <p className="text-white/60 text-sm text-left">
+              {weather.sys.country}
+            </p>
           </div>
         </div>
         <div className="text-right">
-          <div className="text-white/70 texm-sm"></div>
-          <div className="text-white/50 texm-sx"></div>
+          <div className="text-white/70 texm-sm">
+            {new Date(weather.dt * 1000).toLocaleDateString('en-US', {
+              weekday: 'long',
+              month: 'short',
+              day: 'numeric',
+            })}
+          </div>
+          <div className="text-white/50 texm-sx">
+            {new Date(weather.dt * 1000).toLocaleTimeString('en-US', {
+              hour: '2-digit',
+              minute: '2-digit',
+            })}
+          </div>
         </div>
       </div>
       <div className="flex items-center justify-between b-10">
