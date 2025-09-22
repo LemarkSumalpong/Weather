@@ -1,6 +1,3 @@
-
-console.log("ENV keys:", Object.keys(import.meta.env));
-console.log("API Key:", import.meta.env.VITE_API_KEY);
 const API_KEY = import.meta.env.VITE_API_KEY;
 const BASE_URL = "https://api.openweathermap.org/data/2.5";
 const GEO_URL = "https://api.openweathermap.org/geo/1.0"
