@@ -63,15 +63,14 @@ export const getWindDirection = (deg) => {
 };
 
 export const formatUV = (uvi, isDay = true) => {
-    if (!isDay) return "Low"; 
-    if (uvi < 3) return "Low";
-    if (uvi < 6) return "Moderate";
-    if (uvi < 8) return "High";
-    if (uvi < 11) return "Very High";
-    return "Extreme";
+  if (!isDay) return `Low`; 
+  let level;
+  if (uvi < 3) level = "Low";
+  else if (uvi < 6) level = "Moderate";
+  else if (uvi < 8) level = "High";
+  else if (uvi < 11) level = "Very High";
+  else level = "Extreme";
+  return `${uvi} (${level})`;
 };
 
-export const isDaytime = (currentTime, sunrise, sunset) => {
-    return currentTime >= sunrise && currentTime <= sunset;
-};
 
