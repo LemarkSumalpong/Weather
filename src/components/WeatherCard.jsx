@@ -13,7 +13,7 @@ import * as LucideIcons from 'lucide-react';
 
 function WeatherCard({ weather, unit }) {
   const iconName = getWeatherIcon(weather.weather[0]);
-  const iconComponent = LucideIcons[iconName] || LucideIcons.Cloud;
+  const IconComponent = LucideIcons[iconName] || LucideIcons.Cloud;
 
   const weatherStats = [
     {
@@ -53,7 +53,7 @@ function WeatherCard({ weather, unit }) {
       className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 shadow-2xl hover:bg-white/15
     transition-all duration-300"
     >
-      <div className="flex items-centerj justify-between mb-8">
+      <div className="flex items-center justify-between mb-8">
         <div className="flex items-center space-x-3">
           <div className="p-2 bg-white/10 rounded-full">
             <MapPin className="w-5 h-5 text-white/80 " />
@@ -73,7 +73,7 @@ function WeatherCard({ weather, unit }) {
               day: 'numeric',
             })}
           </div>
-          <div className="text-white/50 texm-sx">
+          <div className="text-white/50 texm-sm">
             {new Date(weather.dt * 1000).toLocaleTimeString('en-US', {
               hour: '2-digit',
               minute: '2-digit',
@@ -95,7 +95,9 @@ function WeatherCard({ weather, unit }) {
             <span>L:{formatTemperature(weather.main.temp_min, unit)}°</span>
           </div>
         </div>
-        <div className="text-white/90 tansform hover:scale-110 transition-transform duration-300"></div>
+        <div className="text-white/90 tansform hover:scale-110 transition-transform duration-300">
+        <IconComponent size={20} className= "drop-shadow-2xl" />
+        </div>
       </div>
 
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 mb-6">
