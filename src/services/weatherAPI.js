@@ -116,6 +116,21 @@ const GEO_URL = "https://api.openweathermap.org/geo/1.0"
     }
  };
 
- 
+ export const getWeatherWithUV = async (lat, lon) => {
+  try {
+    const response = await fetch(
+      `${BASE_URL}/onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric&exclude=minutely,hourly,alerts`
+    );
 
- 
+    if (!response.ok) {
+      throw new Error(`Failed to fetch weather with UV: ${response.status}`);
+    }
+
+    return await response.json();
+  } catch (error) {
+    if (error instanceof TypeError && error.message.includes("fetch")) {
+      throw new Error("Network error, please check your internet connection");
+    }
+    throw error;
+  }
+};

@@ -61,3 +61,18 @@ export const getWindDirection = (deg) => {
     ];
     return directions[Math.round(deg / 22.5) % 16];
 };
+
+export const formatUV = (uvi, isDay = true) => {
+  const numUVI = Number(uvi); 
+
+  if (!isDay) return `Low`; 
+
+  let level;
+  if (numUVI < 3) level = "Low";
+  else if (numUVI < 6) level = "Moderate";
+  else if (numUVI < 8) level = "High";
+  else if (numUVI < 11) level = "Very High";
+  else level = "Extreme";
+
+  return `${numUVI} (${level})`;
+};

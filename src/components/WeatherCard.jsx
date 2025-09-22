@@ -7,15 +7,22 @@ import {
   Droplets,
   Gauge,
   Thermometer,
+  Sun
 } from 'lucide-react';
-import { formatTemperature, formatTime, getWeatherIcon } from '../utils/weatherUtils';
+import { formatTemperature, formatTime, getWeatherIcon, formatUV } from '../utils/weatherUtils';
 import * as LucideIcons from 'lucide-react';
 
 function WeatherCard({ weather, unit }) {
   const iconName = getWeatherIcon(weather.weather[0]);
   const IconComponent = LucideIcons[iconName] || LucideIcons.Cloud;
+  const isDay = weather.dt >= weather.sys.sunrise && weather.dt <= weather.sys.sunset;
 
   const weatherStats = [
+   { icon: Sun, 
+    label: "UV Index",
+    value: formatUV(weather.uvi, isDay), 
+    color: "text-yellow-300",
+  },
     {
       icon: Eye,
       label: 'Visibility',
